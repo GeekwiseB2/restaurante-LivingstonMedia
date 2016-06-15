@@ -13,7 +13,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body id="home" data-spy="scroll" data-target="#bs-example-navbar-collapse-1">
 	<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -30,11 +30,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Our Story</a></li>
-				<li><a href="#">Review</a></li>
-				<li><a href="#">Menu</a></li>
-				<li><a href="#">Contact Us</a></li>
+        <li class="active" class="smooth-scroll"><a class="smooth-scroll" href="#home">Home <span class="sr-only">(current)</span></a></li>
+        <li><a class="smooth-scroll" href="#story">Our Story</a></li>
+				<li><a class="smooth-scroll" href="#food-review">Review</a></li>
+				<li><a class="smooth-scroll" href="#menu">Menu</a></li>
+				<li><a class="smooth-scroll" href="#contact">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -57,14 +57,16 @@
     </div>
     <div class="item" id="slide2">
       <div class="carousel-caption">
-        <h3></h3>
-				<p></p>
-				<button></button>
+        <h3>Eat Local</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<button class="btn">Learn more</button>
       </div>
     </div>
 		<div class="item" id="slide3">
       <div class="carousel-caption">
-        ...
+				<h3>From farm to table.</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<button class="btn">Browse Gallery</button>
       </div>
     </div>
   </div>
@@ -147,9 +149,63 @@
 		  </div>
 	</div>
 </div>
-
+<div class="container-fluid" id="contact">
+	<div class="container">
+		<div class="row">
+			<h1>Contact us</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nemo ipsam laboriosam totam explicabo, eligendi officia reiciendis alias aut! Corporis tempora harum deserunt illo earum, distinctio exercitationem eum molestiae sed.</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="g-recaptcha">
+					<!-- Do not change the code! -->
+					<a id="foxyform_embed_link_789440" href="http://www.foxyform.com/">foxyform</a>
+					<script type="text/javascript">
+					(function(d, t){
+					   var g = d.createElement(t),
+					       s = d.getElementsByTagName(t)[0];
+					   g.src = "http://www.foxyform.com/js.php?id=789440&sec_hash=731ada4e0b9&width=350px";
+					   s.parentNode.insertBefore(g, s);
+					}(document, "script"));
+					</script>
+					<!-- Do not change the code! -->
+				</div>
+			</div> <!-- END CONTACT FORM -->
+			<div class="col-sm-6">
+				<address>
+			  <strong>Restaurante</strong><br>
+				700 Van Ness Ave<br>
+			  Fresno, CA 93721<br>
+			  <abbr title="Phone">P:</abbr> (123) 456-7890
+				</address>
+				<div class="map">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.604240146298!2d-119.78796568471212!3d36.732064979962736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809460a5cfdf4b6b%3A0xab092ce50c284a0a!2sBitwise+Industries!5e0!3m2!1sen!2sus!4v1465953852110" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div> <!-- END MAP FORM -->
+		</div>
+	</div>
+</div>
 	<!-- javascript	 -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if( $(this).attr("class")=="smooth-scroll") {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                    if (target.length) {
+                            $('html,body').animate({
+                                    scrollTop: target.offset().top
+                            }, 1000);
+                            return false;
+                    }
+                }
+            }
+        });
+    });
+  </script>
 </body>
 </html>
